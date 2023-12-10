@@ -1,0 +1,146 @@
+{
+    "title": "Change caps_lock to dual keys, escape and left_command. Change left_command-HJKL to Arrows",
+    "rules": [
+        {
+            "description": "Change caps_lock to left_command if pressed with other keys, change caps_lock to escape if pressed alone.",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "caps_lock",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_command"
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "escape"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Change left_command-HJKL to Arrow left,down,up,right",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    
+                    "from": {
+                        "key_code": "h",
+                        "modifiers": {
+                            "mandatory": ["left_command"],
+                            "optional": [
+                                "caps_lock",
+                                "option",
+                                "shift",
+                                "control"
+                            ]
+                        }
+                    },
+                    
+                    "to": [
+                        {
+                            "key_code": "left_arrow"
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": {
+                            "mandatory": ["left_command"],
+                            "optional": [
+                                "caps_lock",
+                                "option",
+                                "shift",
+                                "control"
+                            ]
+                        }
+                    },
+                    
+                    "to": [
+                        {
+                            "key_code": "down_arrow"
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    
+                    "from": {
+                        "key_code": "k",
+                        "modifiers": {
+                            "mandatory": ["left_command"],
+                            "optional": [
+                                "caps_lock",
+                                "option",
+                                "shift",
+                                "control"
+                            ]
+                        }
+                    },
+                    
+                    "to": [
+                        {
+                            "key_code": "up_arrow"
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    
+                    "from": {
+                        "key_code": "l",
+                        "modifiers": {
+                            "mandatory": ["left_command"],
+                            "optional": [
+                                "caps_lock",
+                                "option",
+                                "shift",
+                                "control"
+                            ]
+                        }
+                    },
+                    
+                    "to": [
+                        {
+                            "key_code": "right_arrow"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": "Change ESC to caps_lock:",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    
+                    "from": {
+                        "key_code": "escape",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "caps_lock"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
